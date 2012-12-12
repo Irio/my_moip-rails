@@ -18,6 +18,10 @@ class PurchasesControllerTest < ActionController::TestCase
     }
   end
 
+  def setup
+    @controller = MyMoipRails::PurchasesController.new
+  end
+
   test "should receive post notifications" do
     post :notification, done_params
     assert_response :success
