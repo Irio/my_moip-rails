@@ -60,6 +60,13 @@ class PurchasesControllerTest < ActionController::TestCase
     assert @response.body.blank?, 'should be blank'
   end
 
+  test "logs every notification" do
+    logger = stub
+    Rails.stubs(:logger).returns(logger)
+    logger.expects(:info).with(regexp_matches(/MyMoipRails notification received/))
+    post :notification, done_params
+  end
+
   test "should run block given to 'done' method in requests with status '4'" do
     payment_entity = stub
     @controller.class.class_eval do
