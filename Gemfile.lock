@@ -49,8 +49,11 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.19)
     minitest (4.3.3)
+    mocha (0.13.0)
+      metaclass (~> 0.0.1)
     multi_json (1.5.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -99,6 +102,7 @@ PLATFORMS
 DEPENDENCIES
   jquery-rails
   minitest
+  mocha
   my_moip-rails!
   sqlite3
   turn

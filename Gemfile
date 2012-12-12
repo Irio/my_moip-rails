@@ -8,6 +8,7 @@ gemspec
 group :test do
   gem 'turn'
   gem 'minitest'
+  gem 'mocha', require: false
 end
 
 # jquery-rails is used by the dummy application

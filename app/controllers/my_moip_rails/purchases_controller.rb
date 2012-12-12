@@ -1,5 +1,5 @@
 module MyMoipRails
-  class PurchasesController < ApplicationController
+  class PurchasesController < BaseController
     def notification
       render nothing: true, status: :ok
     end

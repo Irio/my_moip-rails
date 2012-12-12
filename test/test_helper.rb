@@ -2,9 +2,10 @@
 ENV["RAILS_ENV"] = "test"
 
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
-require "rails/test_help"
+require 'rails/test_help'
 require 'turn/autorun'
 require 'minitest/autorun'
+require 'mocha/setup'
 
 Rails.backtrace_cleaner.remove_silencers!
 
