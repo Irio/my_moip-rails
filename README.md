@@ -19,11 +19,11 @@ Do you need to perform a action when a payment is set as done (money already in 
 ```ruby
 class PurchasesController < MyMoipRails::PurchasesController
   def notification
-    super
-
     done do
       # Do whathever you want. Check params variable.
     end
+
+    super
   end
 end
 ```
