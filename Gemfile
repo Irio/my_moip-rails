@@ -6,6 +6,7 @@ source 'http://rubygems.org'
 gemspec
 
 group :test do
+  gem 'sqlite3'
   gem 'turn'
   gem 'minitest'
   gem 'mocha', require: false
