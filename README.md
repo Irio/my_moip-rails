@@ -23,7 +23,7 @@ Any patch are welcome, even removing extra white spaces.
 Payment notifications (NASP)
 ----------------------------
 
-Do you need to perform a action when a payment is set as done (money already in your account)?
+Do you need to perform an action when a payment is set as done (money already in your account)?
 
 Create a controller inherited from `MyMoipRails::PurchasesController` and set its route.
 
@@ -33,7 +33,7 @@ class PurchasesController < MyMoipRails::PurchasesController
   def notification
     done do
       # Do whathever you want.
-      # Will be useful to check params['valor'] and params['cod_moip']
+      # Will be useful to check params[:valor] and params[:cod_moip]
     end
 
     super
