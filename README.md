@@ -3,6 +3,8 @@ MyMoipRails
 
 Currently under active development.
 
+[![Gem Version](https://badge.fury.io/rb/my_moip-rails.png)](http://badge.fury.io/rb/my_moip-rails)
+
 **Bundler - Gemfile**
 ```ruby
 gem 'my_moip-rails'
