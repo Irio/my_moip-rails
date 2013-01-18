@@ -35,12 +35,40 @@ class BaseControllerTest < ActionController::TestCase
       alias_method :original_params, :params
     end
     @controller.class.send(:define_method, :params) do
-      { status_pagamento: '5' }
+      { status_pagamento: '1' }
     end
     a_stub = stub
     a_stub.expects(:done!).never
     @controller.done do
       a_stub.done!
+    end
+  end
+
+  test "canceled method run its block when params variable has status_pagamento 5" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '5' }
+    end
+    a_stub = stub
+    a_stub.expects(:canceled!).once
+    @controller.canceled do
+      a_stub.canceled!
+    end
+  end
+
+  test "canceled method don't run its block when params variable has status_pagamento other than 4" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '1' }
+    end
+    a_stub = stub
+    a_stub.expects(:canceled!).never
+    @controller.canceled do
+      a_stub.canceled!
     end
   end
 end
