@@ -1,6 +1,6 @@
 module MyMoipRails
   class BaseController < ApplicationController
-    helper_method :done, :canceled
+    helper_method :done, :canceled, :reversed
 
     def done
       yield if params[:status_pagamento].eql?('4')
@@ -8,6 +8,10 @@ module MyMoipRails
 
     def canceled
       yield if params[:status_pagamento].eql?('5')
+    end
+
+    def reversed
+      yield if params[:status_pagamento].eql?('7')
     end
   end
 end

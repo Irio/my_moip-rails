@@ -71,4 +71,32 @@ class BaseControllerTest < ActionController::TestCase
       a_stub.canceled!
     end
   end
+
+  test "reversed method run its block when params variable has status_pagamento 7" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '7' }
+    end
+    a_stub = stub
+    a_stub.expects(:reversed!).once
+    @controller.reversed do
+      a_stub.reversed!
+    end
+  end
+
+  test "reversed method don't run its block when params variable has status_pagamento other than 7" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '1' }
+    end
+    a_stub = stub
+    a_stub.expects(:reversed!).never
+    @controller.reversed do
+      a_stub.reversed!
+    end
+  end
 end
