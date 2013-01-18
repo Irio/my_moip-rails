@@ -99,4 +99,32 @@ class BaseControllerTest < ActionController::TestCase
       a_stub.reversed!
     end
   end
+
+  test "refunded method run its block when params variable has status_pagamento 9" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '9' }
+    end
+    a_stub = stub
+    a_stub.expects(:refunded!).once
+    @controller.refunded do
+      a_stub.refunded!
+    end
+  end
+
+  test "refunded method don't run its block when params variable has status_pagamento other than 9" do
+    @controller.class.class_eval do
+      alias_method :original_params, :params
+    end
+    @controller.class.send(:define_method, :params) do
+      { status_pagamento: '1' }
+    end
+    a_stub = stub
+    a_stub.expects(:refunded!).never
+    @controller.refunded do
+      a_stub.refunded!
+    end
+  end
 end
