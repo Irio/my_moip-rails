@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Irio Irineu Musskopf Junior", "Bruno Pazzim"]
   s.email       = %w(irio.musskopf@caixadeideias.com.br bruno.pazzim@caixadeideias.com.br)
   s.homepage    = "https://github.com/Irio/my_moip-rails"
-  s.summary     = "MyMoip extras for Rails projects"
-  s.description = "Deals with Moip's payment notifications"
+  s.summary     = "Payment's notifications"
+  s.description = "MyMoip extras for Rails projects"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]

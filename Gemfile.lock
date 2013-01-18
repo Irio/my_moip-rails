@@ -52,7 +52,7 @@ GEM
     metaclass (0.0.1)
     mime-types (1.19)
     minitest (4.3.3)
-    mocha (0.13.0)
+    mocha (0.13.1)
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
     polyglot (0.3.3)
