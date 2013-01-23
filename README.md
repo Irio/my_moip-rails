@@ -3,6 +3,8 @@ MyMoipRails
 
 Currently under active development.
 
+For a more customized usage, you might want to read [mymoip](https://github.com/Irio/mymoip)'s documentation.
+
 [![Gem Version](https://badge.fury.io/rb/my_moip-rails.png)](http://badge.fury.io/rb/my_moip-rails)
 
 **Bundler - Gemfile**
